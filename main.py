@@ -9,6 +9,7 @@ def get_plugins():
     print("--- Found plugins ---")
     for index, plugin in enumerate(js_files):
         print(index + 1, plugin)
+    print()
     return js_files
 
 
@@ -16,6 +17,7 @@ def copy_plugins(plugin_list, destination):
     for plugin in plugin_list:
         print(f"Copying plugin: {plugin}")
         shutil.copy(plugin, destination)
+    print()
 
 
 def __main__():
@@ -52,3 +54,4 @@ def __main__():
 
 
 __main__()
+os.system("pause")
