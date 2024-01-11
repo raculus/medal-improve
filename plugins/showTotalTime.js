@@ -55,21 +55,33 @@ function decreaseTime(timeString, secondsToSubtract) {
   return formatTimeString({ minutes, seconds });
 }
 
+function getClipWrapper(element) {
+  while (element.parentNode) {
+    if (element.classList.contains("virtuoso-grid-clip-item")) {
+      break;
+    }
+    element = element.parentNode;
+  }
+  return element;
+}
+
 selected_clip_list = [];
 
 document.addEventListener("click", function (event) {
-  if (!createTotalTime()) {
-    console.log("Total time element not found");
+  var clickedElement = event.target;
+  clickedElement = getClipWrapper(clickedElement);
+
+  if (!clickedElement) {
+    console.error("Not clip");
+    return;
+  } else if (!createTotalTime()) {
+    console.error("total-time not found");
     selected_clip_list = [];
     totalTime.textContent = "0:00";
     return;
   }
-  var clickedElement = event.target;
-  for (var i = 0; i < 3; i++) {
-    clickedElement = clickedElement.parentNode;
-  }
   var totalTime = document.getElementById("total-time");
-  var strTime = clickedElement.children[1].children[0].textContent;
+  var strTime = clickedElement.querySelector(".react-contextmenu-wrapper > div > div > div > div:nth-child(2) > div").textContent;
   var strTotalTime = totalTime.textContent;
   var { minutes, seconds } = parseTimeString(strTime);
 
@@ -82,6 +94,8 @@ document.addEventListener("click", function (event) {
   }
   totalTimeColor();
 });
+
+function calcTotalTime() {}
 
 function createTotalTime() {
   var toolbar = document.querySelector("#action-toolbar > div:nth-child(1) > div:nth-child(1)");
