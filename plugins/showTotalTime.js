@@ -95,8 +95,6 @@ document.addEventListener("click", function (event) {
   totalTimeColor();
 });
 
-function calcTotalTime() {}
-
 function createTotalTime() {
   var toolbar = document.querySelector("#action-toolbar > div:nth-child(1) > div:nth-child(1)");
   if (toolbar == null) {
