@@ -10,7 +10,7 @@ def inject_js(html_file, js_file):
     soup = BeautifulSoup(html_content, "html.parser")
 
     # Create a new script tag
-    script_tag = soup.new_tag("script", src=js_file, new_line="\n")
+    script_tag = soup.new_tag("script", src=js_file)
 
     # Append the script tag to the body of the HTML
     body_tag = soup.body
