@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
               if (addedNode) {
                 if (addedNode.children[0].children.length === 4) {
                   console.error("Adblock:", addedNode);
-                  addedNode.style.display = "none"; // Set display to none
+                  addedNode.children[0].children[0].click();
                 }
               }
 
               // Add your logic here to handle the newly created element
             } else if (webview) {
-              console.error("test", webview);
+              console.error("Adblock", webview);
               var parent = webview;
               for (var i = 0; i < 3; i++) {
                 parent = parent.parentNode;
