@@ -6,6 +6,4 @@
 
 - 광고 제거
 
-![alt text](https://github.com/raculus/medal-improve/blob/main/readme/02.png?raw=true)
-
-![alt text](https://github.com/raculus/medal-improve/blob/main/readme/03.png?raw=true)
+<image src="https://github.com/raculus/medal-improve/blob/main/readme/02.png?raw=true" width="50%"><image src="https://github.com/raculus/medal-improve/blob/main/readme/03.png?raw=true" width="50%">
