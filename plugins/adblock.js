@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
               }
               console.log(parent);
               parent.style.display = "none";
+              parent.classList.remove("adStyles");
+              parent.parentNode.classList.remove("adStyles");
             }
           });
         }

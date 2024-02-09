@@ -47,9 +47,9 @@ def __main__():
         plugin_name = os.path.basename(plugin)
         print(f"Plugin {plugin_name}", end=" ")
         if inject_js(f"{path}\\index.min.html", f"plugins/{plugin_name}"):
-            print("update")
-        else:
             print("injected")
+        else:
+            print("updated")
     copy_plugins(plugin_list, plugins_destination)
 
 
